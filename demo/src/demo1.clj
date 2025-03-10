@@ -19,6 +19,9 @@
    :d (t/date)
    :dt (t/date-time)})
 
+(type (t/instant))
+(class (t/instant))
+
 data
 
 (-> data
