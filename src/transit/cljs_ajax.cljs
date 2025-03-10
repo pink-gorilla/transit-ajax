@@ -2,7 +2,7 @@
   (:require
    [promesa.core :as p]
    [ajax.core :as ajax] ; https://github.com/JulianBirch/cljs-ajax
-   [transit.io :refer [decode]]))
+   [transit.io :refer [read-opts]]))
 
 (defn wrap-promise
   [AJAX-TYPE url params]
@@ -11,7 +11,7 @@
      (AJAX-TYPE url
                 (merge 
                  {:timeout 10000 
-                  :response-format (ajax.core/transit-response-format :json decode) ;; IMPORTANT!: You must provide this.
+                  :response-format (ajax.core/transit-response-format :json (read-opts)) ;; IMPORTANT!: You must provide this.
                   :handler (fn [response]
                              (resolve response))
                   :error-handler (fn [error]
