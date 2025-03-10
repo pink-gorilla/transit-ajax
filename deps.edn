@@ -1,10 +1,11 @@
 {:deps {org.clojure/tools.logging {:mvn/version "1.2.4"}
         com.cognitect/transit-clj      {:mvn/version "1.0.333"}
-        com.cognitect/transit-cljs     {:mvn/version "0.8.280"}}
+        com.cognitect/transit-cljs     {:mvn/version "0.8.280"}
+        com.cognitect/transit-js {:mvn/version "0.8.874"} ; otherwise it gets omitted
+        }
  
  :aliases {:build {:deps {io.github.clojure/tools.build {:mvn/version "0.9.6"}
                           slipset/deps-deploy {:mvn/version "0.2.1"}}
                    :ns-default build}}
   
-
  }
