@@ -1,0 +1,12 @@
+.lsp
+.clj-kondo
+.cpcache
+.calva
+.shadow-cljs
+.gorilla
+node_modules
+.nrepl-port
+shadow-cljs.edn
+package.json
+package-lock.json
+karma.conf.js

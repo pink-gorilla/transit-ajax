@@ -1,0 +1,41 @@
+{:paths ["src"]
+ :deps
+ {org.clojure/clojure    {:mvn/version "1.11.3"}
+  ; transit extensions
+  tick/tick {:mvn/version "0.6.2"}
+  techascent/tech.ml.dataset {:mvn/version "7.052"} ; use latest version of techml, tablecloth sometimes falls behind
+  com.cnuernber/tmdjs {:mvn/version "2.002"} ; https://github.com/cnuernber/tmdjs
+  com.cnuernber/ham-scripted {:git/url "https://github.com/cnuernber/ham-scripted"
+                              :sha "36b657d7bdf3d6e168cb083897efbfa9021333da"}
+  ; this lib
+  org.pinkgorilla/transit-ajax {:local/root ".." :deps/manifest :deps}}
+ :aliases 
+
+ {:npm-install {:extra-deps {org.pinkgorilla/webly {:mvn/version "0.9.720"}
+                             ;org.pinkgorilla/ui-repl {:mvn/version "0.1.112"}
+                             }
+                :extra-paths [  "test" ]
+                :exec-fn webly.spa/webly-build
+                :exec-args {:config []
+                            :profile "npm-install"}}
+  
+  :ci {:extra-deps {org.pinkgorilla/webly {:mvn/version "0.9.720"}
+                    ;org.pinkgorilla/ui-repl {:mvn/version "0.1.112"}
+                    }
+       :extra-paths ["test"]
+       :exec-fn webly.spa/webly-build
+       :exec-args {:config []
+                   :profile "ci"}}
+  
+   :test-clj {:extra-paths ["test"]
+              :extra-deps {io.github.cognitect-labs/test-runner
+                           {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                            :sha "cc75980b43011773162b485f46f939dc5fba91e4"}}
+              :main-opts ["-m" "cognitect.test-runner"]
+              :exec-fn cognitect.test-runner.api/test}
+   
+  
+
+  }
+
+}
