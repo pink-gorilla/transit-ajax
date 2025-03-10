@@ -1,8 +1,11 @@
 # transit-ajax
 
-
-
-
+transit encoding is used in
+ - webserver ring middleware (muuntaja)
+ - cljs ajax requests
+ - websocket (sente packer)
+ - websocket flowy
+ 
 # test
 
 ```

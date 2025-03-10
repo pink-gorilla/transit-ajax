@@ -7,6 +7,7 @@
   com.cnuernber/tmdjs {:mvn/version "2.002"} ; https://github.com/cnuernber/tmdjs
   com.cnuernber/ham-scripted {:git/url "https://github.com/cnuernber/ham-scripted"
                               :sha "36b657d7bdf3d6e168cb083897efbfa9021333da"}
+  org.clojure/data.codec {:mvn/version "0.1.1"} ; image base64 encoding
   ; this lib
   org.pinkgorilla/transit-ajax {:local/root ".." :deps/manifest :deps}}
  :aliases 

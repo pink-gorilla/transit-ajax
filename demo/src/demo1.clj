@@ -1,9 +1,12 @@
 (ns demo1
   (:require
    [tick.core :as t]
+   [clojure.java.io :as io]
    [transit.io :refer [encode decode]]
    [transit.core :refer [write-transit read-transit]]
-   [transit.type.tick :refer [add-tick-handlers!]]))
+   [transit.type.tick :refer [add-tick-handlers!]])
+  (:import
+   javax.imageio.ImageIO))
 
 
 (write-transit {:a 1 :b "b"})
@@ -26,4 +29,15 @@ data
 (-> data
     (encode)
     (decode))
+
+
+;; test the logging of unserializable data:
+
+(def img (ImageIO/read (io/file "moon.jpg")))
+img
+
+(-> img (encode))
+
+  
+
 

@@ -11,10 +11,7 @@
    #?(:clj (java.io ByteArrayInputStream ByteArrayOutputStream))
    #?(:clj (clojure.lang IReduceInit))))
 
-; transit encoding is used in
-; - ring middleware (muuntaja)
-; - websocket (sente packer, flowy)
-; - cljs ajax requests ()
+
 
 
 ;; Facilities for encoding/decoding of Electric protocol messages.
