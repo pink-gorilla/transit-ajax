@@ -6,6 +6,7 @@ transit encoding is used in
  - cljs ajax requests
  - websocket (sente packer)
  - websocket flowy
+ - webly (config)
  
 # test
 
